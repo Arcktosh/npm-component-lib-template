@@ -1,0 +1,37 @@
+{
+    "name": "npm-component-lib-template",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Arcktosh/npm-component-lib-template.git"
+    },
+    "version": "0.0.1",
+    "description": "A component library template using React and Typescript, ready to publish to npm.",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "npx rimraf ./dist/ ./build/ && prettier --single-quote --write src && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc --outDir dist/esm",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    },
+    "author": {
+        "name": "Ben Henning",
+        "email": "benhenning10@gmail.com",
+        "url": "https://github.com/Arcktosh"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^18.7.18",
+        "@types/react": "^18.0.20",
+        "@types/react-dom": "^18.0.6",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "typescript": "^4.7.3"
+    },
+    "peerDependencies": {
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    }
+}
